@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peddy</title>
+
+    <!-- daisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Css stylesheet-->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .font-inter {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .font-lato {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/9d085d618a.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    
+
+<body class="font-lato">
+    <header>
+        <!-- navbar -->
+        <nav class="w-10/12 mx-auto flex justify-between items-center m-12">
+            <div class="flex gap-2 items-center">
+                <div>
+                    <img class="h-5" src="assets/logo.webp" alt="">
+                </div>
+                <p class="text-4xl font-extrabold">Peddy</p>
+            </div>
+            <div class="flex gap-8 mr-24">
+                <button class="text-slate-400">Home</button>
+                <button class="text-slate-400">Shop</button>
+                <button class="text-slate-400">Contact</button>
+            </div>
+            <div>
+                <button class="rounded-full border px-3 py-2"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </nav>
+        <!-- banner -->
+        <section class="flex flex-col w-10/12 mx-auto items-center">
+            <div class="flex flex-col items-center text-center gap-3">
+                <p class="text-2xl font-bold text-slate-400">Bringing Families Together ❤️ </p>
+                <h1 class="text-7xl font-bold">Your Path to Adoption <br> Starts Here</h1>
+                <p class="m-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <button class="rounded-xl text-white bg-[#0E7A81] p-3 w-32">View More</button>
+            </div>
+            <div>
+                <img class="py-4" src="assets/pet.webp" alt="">
+            </div>
+        </section>
+    </header>
+    <main></main>
+    <footer></footer>
 </body>
+
 </html>
