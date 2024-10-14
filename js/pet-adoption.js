@@ -13,7 +13,7 @@ const displayCategories = (categories) => {
 
         buttonContainer.innerHTML =
             `
-        <button id="btn-${item.category}" onclick="loadCategoryPets(${item.category})" class="flex items-center gap-2 border rounded-2xl px-40 py-5 font-extrabold text-xl max-sm:w-full">
+        <button id="btn-${item.category}" onclick="loadCategoryPets('${item.category}')" class="flex bg-base-100  items-center gap-2 border rounded-2xl px-40 py-5 font-extrabold text-xl max-sm:w-full">
         <img src="${item.category_icon}" alt="">
         ${item.category}
         </button>
@@ -34,7 +34,18 @@ const loadPets = () => {
 
 const displayPets = (pets) => {
     const petContainer = document.getElementById("pets");
-    // petContainer.innerHTML = "";
+    petContainer.innerHTML = "";
+
+    if (pets.length == 0) {
+        petContainer.classList.remove("grid");
+        petContainer.innerHTML = `
+        <div class="min-h-[300px] flex flex-col gap-5 justify-center items-center text-center">
+          <img src="assets/error.webp" /> 
+          <h2 class="text-center text-xl font-bold">No Information Available</h2>
+        </div>`;
+      } else {
+        petContainer.classList.add("grid");
+      }
 
     pets.forEach((pet) => {
         const card = document.createElement("div");
@@ -61,8 +72,8 @@ const displayPets = (pets) => {
     });
 };
 
-const loadCategoryPets = (id) => {
-    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+const loadCategoryPets = (type) => {
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${type}`)
         .then((res) => res.json())
         .then((data) => {
             displayPets(data.data);
@@ -93,7 +104,7 @@ const displayDetails = (petData) => {
     <p class="text-slate-500">Price: ${petData.price}$</p>
     <p class="text-slate-500">Vaccinated Status: ${petData.vaccinated_status}</p>
     <hr>
-    <p>Details information</p>
+    <p class="font-extrabold"  >Details information</p>
     <p class="text-slate-500">${petData.pet_details}</p>
     </div>
     `;
@@ -103,6 +114,7 @@ const displayDetails = (petData) => {
 const addImage = (img) => {
     console.log(img);
     const LikeContainer = document.getElementById("likeBox")
+    LikeContainer.classList.remove("hidden")
     const ImgBox = document.createElement("div")
     ImgBox.classList = "p-5 rounded-xl"
     ImgBox.innerHTML=
@@ -122,7 +134,6 @@ const check = (data) =>{
 }
 
 const check2 = (data) =>{
-    console.log(typeof(data))
     if (typeof(data) == 'object'){
         return "Not specified"
     }
