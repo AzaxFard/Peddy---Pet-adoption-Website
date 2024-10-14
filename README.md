@@ -10,4 +10,4 @@
  4. Modal views
  5. Data Sorting
 
- Live link:
+ Live link: https://azaxfard.github.io/Peddy---Pet-adoption-Website/
