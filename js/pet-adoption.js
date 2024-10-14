@@ -13,7 +13,7 @@ const displayCategories = (categories) => {
 
         buttonContainer.innerHTML =
             `
-        <button id="btn-${item.category}" onclick="loadCategoryPets(${item.category})" class="flex items-center gap-2 border rounded-2xl px-40 py-5 font-extrabold text-xl">
+        <button id="btn-${item.category}" onclick="loadCategoryPets(${item.category})" class="flex items-center gap-2 border rounded-2xl px-40 py-5 font-extrabold text-xl max-sm:w-full">
         <img src="${item.category_icon}" alt="">
         ${item.category}
         </button>
@@ -45,10 +45,10 @@ const displayPets = (pets) => {
         </figure>
         <div class="card-body">
         <h2 class="card-title text-3xl font-bold">${pet.pet_name}</h2>
-        <p class="text-slate-500">Breed: ${pet.breed}</p>
-        <p class="text-slate-500">Birth: ${pet.date_of_birth}</p>
-        <p class="text-slate-500">Gender: ${pet.gender}</p>
-        <p class="text-slate-500 mb-2">Price: ${pet.price}$</p>
+        <p class="text-slate-500">Breed: ${check(pet.breed)}</p>
+        <p class="text-slate-500">Birth: ${check(pet.date_of_birth)}</p>
+        <p class="text-slate-500">Gender: ${check(pet.gender)}</p>
+        <p class="text-slate-500 mb-2">Price: ${check2(pet.price)}$</p>
         <hr>
         <div class="card-actions flex justify-between mt-2">
         <button id="btn-like" class="border rounded-lg px-3 py-2 text-[#0E7A81]" onclick="addImage('${pet.image}')"><i class="fa-regular fa-thumbs-up"></i></button>
@@ -87,9 +87,9 @@ const displayDetails = (petData) => {
     <div class="flex flex-col gap-2">
     <img class="rounded-xl" src=${petData.image} />
     <h2 class="card-title text-3xl font-bold">${petData.pet_name}</h2>
-    <p class="text-slate-500">Breed: ${petData.breed}</p>
-    <p class="text-slate-500">Birth: ${petData.date_of_birth}</p>
-    <p class="text-slate-500">Gender: ${petData.gender}</p>
+    <p class="text-slate-500">Breed: ${check(petData.breed)}</p>
+    <p class="text-slate-500">Birth: ${check(petData.date_of_birth)}</p>
+    <p class="text-slate-500">Gender: ${check(petData.gender)}</p>
     <p class="text-slate-500">Price: ${petData.price}$</p>
     <p class="text-slate-500">Vaccinated Status: ${petData.vaccinated_status}</p>
     <hr>
@@ -112,6 +112,24 @@ const addImage = (img) => {
     LikeContainer.append(ImgBox)
 }
 
+const check = (data) =>{
+    if (typeof(data) == 'undefined'){
+        return "Not specified"
+    }
+    else {
+        return data
+    }
+}
+
+const check2 = (data) =>{
+    console.log(typeof(data))
+    if (typeof(data) == 'object'){
+        return "Not specified"
+    }
+    else {
+        return data
+    }
+}
 
 loadCategories();
 loadPets();

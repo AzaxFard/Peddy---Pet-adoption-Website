@@ -49,7 +49,7 @@
                 </div>
                 <p class="text-4xl font-extrabold">Peddy</p>
             </div>
-            <div class="flex gap-8 mr-24">
+            <div class="flex gap-8 mr-24 max-sm:hidden">
                 <button class="text-slate-400">Home</button>
                 <button class="text-slate-400">Shop</button>
                 <button class="text-slate-400">Contact</button>
@@ -63,8 +63,7 @@
             <div class="flex flex-col items-center text-center gap-3">
                 <p class="text-2xl font-bold text-slate-400">Bringing Families Together ❤️ </p>
                 <h1 class="text-7xl font-bold">Your Path to Adoption <br> Starts Here</h1>
-                <p class="m-4">It is a long established fact that a reader will be distracted by the readable content of
-                    a page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <p class="m-4">Adopting a pet is one of the most rewarding decisions you can make. It’s not just about giving an animal a home; it’s about creating a bond with a loyal friend who will enrich your life in countless ways. Whether it’s a dog wagging its tail in excitement when you walk through the door or a cat purring softly beside you, pets bring comfort, joy, and unconditional love.</p>
                 <button id="btn-viewMore" onclick="location.href='#adoptBestFriend'" class="rounded-xl text-white bg-[#0E7A81] p-3 w-32">View More</button>
             </div>
             <div>
@@ -77,23 +76,22 @@
         <section id="adoptBestFriend" class="w-10/12 mx-auto text-center items-center">
             <div class="mb-12">
                 <h3 class="font-extrabold text-4xl m-5">Adopt Your Best Friend</h3>
-                <p class="text-slate-400">It is a long established fact that a reader will be distracted by the readable
-                    content of a <br> page when looking at its layout. The point of using Lorem Ipsum is that it has a.
+                <p class="text-slate-400">Join us on our mission to make world a better place for pets and the people who love them. Let's start something big together & change the lives of millions of pets.
                 </p>
             </div>
-            <div id="category-container" class="grid grid-cols-4 gap-4">
+            <div id="category-container" class="grid grid-cols-4 gap-4 max-sm:grid-cols-1">
             </div>
         </section>
         <!-- Adoption cards section-->
         <section class="w-10/12 mx-auto m-10">
-            <div class="flex justify-between items-center mb-10">
-                <p class="text-2xl font-extrabold">Best Deal For You</p>
-                <button class="rounded-xl text-white bg-[#0E7A81] py-3 px-6 text-xl">Sort by Price</button>
+            <div class="flex justify-between items-center mb-10 max-sm:flex-col gap-5">
+                <p class="text-2xl font-extrabold">Best Deals For You</p>
+                <button class="rounded-xl text-white bg-[#0E7A81] py-3 px-6 text-xl max-sm: ">Sort by Price</button>
             </div>
-            <div class="flex">
-                <div id="pets" class="grid grid-cols-3 w-3/4">
+            <div class="flex max-sm:flex-col">
+                <div id="pets" class="grid grid-cols-3 w-3/4 max-sm:grid-cols-1 ">
                 </div>
-                <div id="likeBox" class="w-1/4 border rounded-xl">
+                <div id="likeBox" class="w-1/4 border rounded-xl max-sm:w-96">
                     <!-- <img src="assets/pet.webp" alt="">
                     <img src="assets/pet.webp" alt="">
                     <img src="assets/pet.webp" alt=""> -->
@@ -121,7 +119,7 @@
     </dialog>
 
     <footer class="bg-[#131313] text-white">
-        <div class="w-10/12 mx-auto py-24 flex justify-between">
+        <div class="w-10/12 mx-auto py-24 flex justify-between max-sm:flex-col gap-5">
             <div class="">
                 <div class="flex gap-2 items-center mb-6">
                     <img class="h-5" src="assets/logo.webp" alt="">
